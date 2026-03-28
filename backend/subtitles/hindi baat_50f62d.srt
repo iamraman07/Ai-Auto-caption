@@ -1,0 +1,60 @@
+1
+00:00:00,000 --> 00:00:01,630
+Hello, you can see that I
+
+2
+00:00:01,630 --> 00:00:03,652
+am logging in with Ramdeep's ID
+
+3
+00:00:03,652 --> 00:00:05,152
+and now you can see the
+
+4
+00:00:05,152 --> 00:00:07,043
+notification that I have been
+
+5
+00:00:07,043 --> 00:00:09,261
+removed from the journey course by
+
+6
+00:00:09,261 --> 00:00:11,087
+the admin, which I had tried
+
+7
+00:00:11,087 --> 00:00:11,1000
+with Bob's ID.
+
+8
+00:00:12,000 --> 00:00:14,822
+And the second thing is that
+
+9
+00:00:14,822 --> 00:00:18,047
+Bob requested to join our Airbnb
+
+10
+00:00:18,047 --> 00:00:20,566
+on the 1st of March 1646,
+
+11
+00:00:20,566 --> 00:00:23,690
+which means I had requested him
+
+12
+00:00:23,690 --> 00:00:25,000
+at this time.
+
+13
+00:00:25,000 --> 00:00:27,885
+And here you can see that
+
+14
+00:00:27,885 --> 00:00:31,462
+Bob and Ramdeep have joined the
+
+15
+00:00:31,462 --> 00:00:34,000
+Airbnb on my journeys.
+

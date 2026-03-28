@@ -1,0 +1,12 @@
+1
+00:00:00,000 --> 00:00:12,000
+Hello, you can see that I am logging in with Ramdeep's ID and now you can see the notification that I have been removed from the journey course by the admin, which I had tried with Bob's ID.
+
+2
+00:00:12,000 --> 00:00:25,000
+And the second thing is that Bob requested to join our Airbnb on the 1st of March 1646, which means I had requested him at this time.
+
+3
+00:00:25,000 --> 00:00:34,000
+And here you can see that Bob and Ramdeep have joined the Airbnb on my journeys.
+

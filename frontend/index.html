@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Auto Caption</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🎬 AI Auto Caption Studio</h1>
+    </header>
+
+    <main class="container">
+        <!-- Dashboard Area 1: Media Input -->
+        <section class="panel input-panel">
+            <h2>1. Provide Media</h2>
+            
+            <div class="tabs">
+                <button class="tab-btn active" onclick="switchTab('upload')">File Upload</button>
+                <button class="tab-btn" onclick="switchTab('youtube')">YouTube Link</button>
+            </div>
+
+            <div id="upload-tab" class="tab-content active">
+                <input type="file" id="media-file" accept="video/*,audio/*">
+                <button class="primary-btn" onclick="uploadFile()">Upload Media</button>
+            </div>
+
+            <div id="youtube-tab" class="tab-content hidden">
+                <input type="text" id="youtube-url" placeholder="https://youtube.com/watch?v=...">
+                <button class="primary-btn" onclick="processYouTube()">Process Link</button>
+            </div>
+
+            <div id="status-box" class="status-box hidden">
+                <p id="status-text">Status: Waiting...</p>
+                <div class="loader" id="loader"></div>
+            </div>
+            
+            <button id="generate-btn" class="generate-btn hidden" onclick="startTranscription()">✨ Generate Captions</button>
+        </section>
+
+        <!-- Dashboard Area 2: Preview & Editor -->
+        <section class="panel editor-panel">
+            <h2>2. Preview & Editor</h2>
+            
+            <div id="editor-container" class="hidden">
+                <div class="controls">
+                    <p class="hint">Edit your AI-generated text directly below:</p>
+                </div>
+                
+                <!-- Styling Controls -->
+                <div class="style-controls">
+                    <label>Size: <input type="number" id="style-size" value="24" min="10" max="100"></label>
+                    <label>Color: <input type="color" id="style-color" value="#ffffff"></label>
+                    <label><input type="checkbox" id="style-bold" checked> Bold</label>
+                    <label><input type="checkbox" id="style-italic"> Italic</label>
+                </div>
+
+                <div id="subtitle-list" class="subtitle-list">
+                    <!-- Dynamic segments will be injected here via JS -->
+                </div>
+            </div>
+            <p id="editor-placeholder" class="text-muted">Generate captions first to unlock the editor.</p>
+        </section>
+
+        <!-- Dashboard Area 3: Export Menu -->
+        <section class="panel export-panel">
+            <h2>3. Export Options</h2>
+            <div class="export-actions">
+                <button class="export-btn" id="export-srt-btn" onclick="downloadEditedSRT()" disabled>📥 Download Edited .SRT</button>
+                <button class="export-btn overlay-btn" id="export-video-btn" onclick="generateSubtitledVideo()" disabled>🔥 Burn Subtitles to Video</button>
+            </div>
+            
+            <!-- Video Preview & Download Area -->
+            <div id="export-preview-container" class="hidden" style="margin-top: 1.5rem; text-align: center;">
+                <video id="final-video-player" controls style="width: 100%; border-radius: 8px; margin-bottom: 0.5rem; background: black; max-height: 200px;" class="hidden"></video>
+                <div style="display: flex; justify-content: center; gap: 1rem; align-items: center; margin-top: 1rem;">
+                    <a id="download-icon-btn" href="#" download="captioned_video.mp4" class="hidden" style="font-size: 2.5rem; text-decoration: none;" title="Download Video">⬇️</a>
+                    <span id="export-status" class="status-text"></span>
+                </div>
+            </div>
+            
+            <p id="export-status-old" class="status-text"></p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+1
+00:00:00,000 --> 00:00:04,360
+Hello everyone.
+
+2
+00:00:04,360 --> 00:00:11,080
+Today we are going to solve the question of textbook of Class 11th which is Computer
+
+3
+00:00:11,080 --> 00:00:17,400
+Science with Python and we are going to solve the question of chapter 7 which is Python
+
+4
+00:00:17,400 --> 00:00:20,560
+fundamentals on page number 202.
+
+5
+00:00:20,560 --> 00:00:27,360
+So the question is write a program that displays a joke but display the punchline only when
+
+6
+00:00:27,360 --> 00:00:30,280
+the user presses Enter key.
+
+7
+00:00:30,280 --> 00:00:40,720
+So first we need to display a joke and then when user press the Enter key then we need
+
+8
+00:00:40,720 --> 00:00:45,040
+to display the punchline on the output.
+
+9
+00:00:45,040 --> 00:00:53,000
+So here I also gave an that is you may use input function.
+
+10
+00:00:53,000 --> 00:01:00,200
+So obviously without any function we are not able to ask the user to press Enter key.
+
+11
+00:01:00,200 --> 00:01:07,680
+So let's come to our VS code.
+
+12
+00:01:07,680 --> 00:01:11,160
+Here I already have created a file.
+
+13
+00:01:11,160 --> 00:01:15,560
+So let's do the code.
+
+14
+00:01:15,560 --> 00:01:19,320
+So first we need to display the joke.
+
+15
+00:01:19,320 --> 00:01:29,120
+So let's take a variable, joke and let's write the joke in this variable and let's store
+
+16
+00:01:29,120 --> 00:01:30,520
+the joke in this variable.
+
+17
+00:01:30,520 --> 00:01:37,880
+So the joke is I tried starting a hot air balloon business but it now took off.
+
+18
+00:01:37,880 --> 00:02:04,160
+So let's write it.
+
+19
+00:02:04,160 --> 00:02:08,960
+So it is a joke.
+
+20
+00:02:08,960 --> 00:02:10,200
+So this is a joke.
+
+21
+00:02:10,200 --> 00:02:17,600
+Now we need to store the punchline of that joke in a variable.
+
+22
+00:02:17,600 --> 00:02:25,440
+So let's create a variable of punchline with an punchline and let's write the punchline
+
+23
+00:02:25,440 --> 00:02:27,480
+store the punchline this variable.
+
+24
+00:02:27,480 --> 00:02:31,280
+So the punchline in this joke is that it never took off.
+
+25
+00:02:31,280 --> 00:02:36,880
+So let's write it.
+
+26
+00:02:36,880 --> 00:02:38,400
+All right.
+
+27
+00:02:38,400 --> 00:02:43,520
+Now in the output first we need to display the joke.
+
+28
+00:02:43,520 --> 00:02:47,840
+So to display anything we use a print function.
+
+29
+00:02:47,840 --> 00:02:51,040
+So here it is a print joke.
+
+30
+00:02:51,040 --> 00:02:58,040
+So we write joke.
+
+31
+00:02:58,040 --> 00:03:03,760
+Now here it is.
+
+32
+00:03:03,760 --> 00:03:10,800
+And now we will ask the user to press enter key.
+
+33
+00:03:10,800 --> 00:03:18,200
+So let's create a variable of name user and here we will ask from user with the help
+
+34
+00:03:18,200 --> 00:03:20,440
+of an interfunction input.
+
+35
+00:03:20,440 --> 00:03:23,320
+You can write it in text.
+
+36
+00:03:23,320 --> 00:03:29,480
+So we will write press enter key.
+
+37
+00:03:29,480 --> 00:03:36,840
+And when user will press enter key the output the punchline should be printed.
+
+38
+00:03:36,840 --> 00:03:41,840
+So let's print the punchline here.
+
+39
+00:03:41,840 --> 00:03:48,840
+All right.
+
+40
+00:03:48,840 --> 00:04:00,240
+Let's run this code.
+
+41
+00:04:00,240 --> 00:04:01,240
+So here is the joke.
+
+42
+00:04:01,240 --> 00:04:03,440
+I tried to study the hardware value business but it never took off.
+
+43
+00:04:03,440 --> 00:04:08,040
+So to display the punchline we need to press enter key.
+
+44
+00:04:08,040 --> 00:04:13,680
+So we press enter and here it is written punchline which is it now took off.
+
+45
+00:04:13,680 --> 00:04:15,480
+So that's it for today.
+
+46
+00:04:15,480 --> 00:04:16,160
+Thank you.
+

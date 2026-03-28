@@ -1,0 +1,504 @@
+1
+00:00:00,000 --> 00:00:01,660
+So, hey guys, welcome back to
+
+2
+00:00:01,660 --> 00:00:03,263
+my channel and today we will
+
+3
+00:00:03,263 --> 00:00:05,266
+solve another question of chapter 9
+
+4
+00:00:05,266 --> 00:00:06,811
+flow of control of class 11
+
+5
+00:00:06,811 --> 00:00:08,815
+and the subject is computer science
+
+6
+00:00:08,815 --> 00:00:10,589
+with Python. The page number is
+
+7
+00:00:10,589 --> 00:00:12,077
+332. We are solving type C
+
+8
+00:00:12,077 --> 00:00:13,565
+programming practice slash
+
+9
+00:00:13,565 --> 00:00:15,569
+knowledge based questions and today
+
+10
+00:00:15,569 --> 00:00:17,400
+we will solve question number 7.
+
+11
+00:00:17,400 --> 00:00:19,060
+Let's read question number 7.
+
+12
+00:00:19,060 --> 00:00:21,180
+write a short program to input
+
+13
+00:00:21,180 --> 00:00:22,947
+our digit and print it in
+
+14
+00:00:22,947 --> 00:00:23,300
+words
+
+15
+00:00:23,300 --> 00:00:25,108
+so we have to input single
+
+16
+00:00:25,108 --> 00:00:26,220
+digit one by one
+
+17
+00:00:26,220 --> 00:00:30,621
+and then we have to convert
+
+18
+00:00:30,621 --> 00:00:32,740
+it into words
+
+19
+00:00:32,740 --> 00:00:36,905
+we will ask the user if
+
+20
+00:00:36,905 --> 00:00:41,432
+the value is 0 then print
+
+21
+00:00:41,432 --> 00:00:42,700
+it as 0
+
+22
+00:00:42,700 --> 00:00:44,530
+if it is 1 then print
+
+23
+00:00:44,530 --> 00:00:45,140
+it as 1
+
+24
+00:00:45,140 --> 00:00:46,798
+So, this is how we can
+
+25
+00:00:46,798 --> 00:00:49,060
+watch print the digits, right?
+
+26
+00:00:49,520 --> 00:00:51,702
+So, let's open this code and
+
+27
+00:00:51,702 --> 00:00:54,040
+I have already created a file.
+
+28
+00:00:54,200 --> 00:00:56,656
+So, let's take input from the
+
+29
+00:00:56,656 --> 00:00:57,080
+user.
+
+30
+00:00:57,340 --> 00:01:01,271
+So, n is equal to int
+
+31
+00:01:01,271 --> 00:01:04,640
+input enter digit.
+
+32
+00:01:06,380 --> 00:01:08,731
+Now, we will ask here if
+
+33
+00:01:08,731 --> 00:01:11,180
+that digit is equal to 0.
+
+34
+00:01:11,180 --> 00:01:12,480
+So, what should we do?
+
+35
+00:01:13,520 --> 00:01:14,240
+Print 0.
+
+36
+00:01:15,140 --> 00:01:16,986
+and if that digit is, we
+
+37
+00:01:16,986 --> 00:01:18,986
+will use elif for that, we
+
+38
+00:01:18,986 --> 00:01:21,140
+can't use it again and again
+
+39
+00:01:21,140 --> 00:01:26,059
+so to ask again and again,
+
+40
+00:01:26,059 --> 00:01:28,140
+we use elif
+
+41
+00:01:28,140 --> 00:01:31,004
+so elif n is equal to
+
+42
+00:01:31,004 --> 00:01:31,140
+1
+
+43
+00:01:31,140 --> 00:01:34,270
+if that value is 1, then
+
+44
+00:01:34,270 --> 00:01:37,140
+you print that it is 1
+
+45
+00:01:37,140 --> 00:01:39,140
+now we will copy it because
+
+46
+00:01:39,140 --> 00:01:40,770
+we are going to use it
+
+47
+00:01:40,770 --> 00:01:41,140
+a lot
+
+48
+00:01:41,140 --> 00:01:44,170
+We will copy it and paste
+
+49
+00:01:44,170 --> 00:01:45,140
+it here.
+
+50
+00:01:45,140 --> 00:01:48,807
+If it is 2, then write
+
+51
+00:01:48,807 --> 00:01:49,140
+2.
+
+52
+00:01:49,140 --> 00:01:53,140
+3
+
+53
+00:01:57,140 --> 00:01:59,415
+You can increase the speed of
+
+54
+00:01:59,415 --> 00:02:01,140
+the video if you want.
+
+55
+00:02:01,140 --> 00:02:05,140
+Because it will take time.
+
+56
+00:02:05,140 --> 00:02:09,140
+We will keep copying till 9.
+
+57
+00:02:09,140 --> 00:02:15,258
+So, we know that we cannot
+
+58
+00:02:15,258 --> 00:02:17,140
+do that.
+
+59
+00:02:17,140 --> 00:02:22,595
+5, elif , n is equal to
+
+60
+00:02:22,595 --> 00:02:23,140
+2.
+
+61
+00:02:23,140 --> 00:02:25,140
+I copied and pasted it.
+
+62
+00:02:25,140 --> 00:02:27,140
+I didn't paste it.
+
+63
+00:02:27,140 --> 00:02:29,140
+I am writing it straight.
+
+64
+00:02:29,140 --> 00:02:38,140
+6, paste and then 7.
+
+65
+00:02:39,140 --> 00:02:41,140
+8
+
+66
+00:02:47,140 --> 00:02:49,140
+9 last
+
+67
+00:02:53,140 --> 00:02:54,422
+and now we will write one
+
+68
+00:02:54,422 --> 00:02:55,140
+more condition
+
+69
+00:02:55,140 --> 00:02:57,140
+condition means
+
+70
+00:02:57,140 --> 00:02:59,140
+else condition
+
+71
+00:02:59,140 --> 00:03:01,140
+if there is nothing from these
+
+72
+00:03:01,140 --> 00:03:03,140
+then what is it
+
+73
+00:03:03,140 --> 00:03:05,140
+you have put invalid value
+
+74
+00:03:05,140 --> 00:03:07,140
+nothing is there
+
+75
+00:03:07,140 --> 00:03:17,586
+in that value let's write zero
+
+76
+00:03:17,586 --> 00:03:28,380
+have any other have nine heaven
+
+77
+00:03:28,380 --> 00:03:30,390
+If it is 3.4, then it
+
+78
+00:03:30,390 --> 00:03:33,457
+will convert it to float, but
+
+79
+00:03:33,457 --> 00:03:36,101
+it will not convert it to
+
+80
+00:03:36,101 --> 00:03:39,380
+float because it is an integer.
+
+81
+00:03:39,380 --> 00:03:40,607
+I mean, why will it convert
+
+82
+00:03:40,607 --> 00:03:41,789
+it to float? Sorry, I said
+
+83
+00:03:41,789 --> 00:03:42,380
+it last time.
+
+84
+00:03:42,380 --> 00:03:44,586
+I put the value in float,
+
+85
+00:03:44,586 --> 00:03:47,409
+so it should have been converted
+
+86
+00:03:47,409 --> 00:03:48,380
+to integer.
+
+87
+00:03:48,380 --> 00:03:50,094
+Okay, there is an integer written
+
+88
+00:03:50,094 --> 00:03:51,445
+here, so it will also take
+
+89
+00:03:51,445 --> 00:03:52,380
+the integer value.
+
+90
+00:03:52,380 --> 00:03:53,951
+If you put a dot value
+
+91
+00:03:53,951 --> 00:03:55,666
+in it, then it will show
+
+92
+00:03:55,666 --> 00:03:56,380
+the error.
+
+93
+00:03:56,380 --> 00:03:59,115
+Here it is written that invalid
+
+94
+00:03:59,115 --> 00:04:02,027
+literal for integer with base 10,
+
+95
+00:04:02,027 --> 00:04:02,380
+3.4.
+
+96
+00:04:02,380 --> 00:04:04,866
+So 3.4 was a dot value,
+
+97
+00:04:04,866 --> 00:04:06,380
+decimal value.
+
+98
+00:04:06,380 --> 00:04:08,728
+So it was not allowed while
+
+99
+00:04:08,728 --> 00:04:11,597
+we are using integer before input
+
+100
+00:04:11,597 --> 00:04:12,380
+function.
+
+101
+00:04:12,380 --> 00:04:14,209
+So what else will you put
+
+102
+00:04:14,209 --> 00:04:15,380
+other than this?
+
+103
+00:04:15,380 --> 00:04:17,380
+When will the invalid value come?
+
+104
+00:04:17,380 --> 00:04:18,380
+When will it be written?
+
+105
+00:04:18,380 --> 00:04:19,918
+like if you put another number
+
+106
+00:04:19,918 --> 00:04:21,098
+like 11 then it will be
+
+107
+00:04:21,098 --> 00:04:22,380
+written as embedded value
+
+108
+00:04:22,380 --> 00:04:24,192
+otherwise you can see here if
+
+109
+00:04:24,192 --> 00:04:26,067
+it is integer then put integer
+
+110
+00:04:26,067 --> 00:04:26,380
+value
+
+111
+00:04:26,380 --> 00:04:28,728
+so it will restrict here if
+
+112
+00:04:28,728 --> 00:04:30,380
+you put a character
+
+113
+00:04:30,380 --> 00:04:32,053
+or if not put a decimal
+
+114
+00:04:32,053 --> 00:04:34,380
+value then it will restrict here
+
+115
+00:04:34,380 --> 00:04:35,886
+error will come that yes this
+
+116
+00:04:35,886 --> 00:04:37,289
+is integer and you put some
+
+117
+00:04:37,289 --> 00:04:38,380
+other data type value
+
+118
+00:04:38,380 --> 00:04:41,755
+so yeah that's it for today
+
+119
+00:04:41,755 --> 00:04:42,380
+class
+
+120
+00:04:42,380 --> 00:04:43,516
+so do like my video and
+
+121
+00:04:43,516 --> 00:04:45,244
+subscribe my channel and share this
+
+122
+00:04:45,244 --> 00:04:46,380
+video with your friends
+
+123
+00:04:46,380 --> 00:04:49,795
+comment down the any error or
+
+124
+00:04:49,795 --> 00:04:53,680
+any question you have I'll surely
+
+125
+00:04:53,680 --> 00:04:54,740
+reply and
+
+126
+00:04:54,740 --> 00:04:58,500
+that's it thank you
+

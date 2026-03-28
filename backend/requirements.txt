@@ -1,0 +1,9 @@
+fastapi==0.103.2
+uvicorn[standard]==0.23.2
+pydantic==2.4.2
+pydantic-settings==2.0.3
+python-multipart==0.0.6
+yt-dlp==2024.11.18
+openai-whisper
+psutil
+imageio-ffmpeg
