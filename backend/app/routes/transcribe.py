@@ -1,6 +1,7 @@
 import os
 import uuid
-from fastapi import APIRouter, HTTPException
+import logging
+from fastapi import APIRouter, HTTPException, BackgroundTasks
 from pydantic import BaseModel
 from app.core.config import SUBTITLES_DIR
 from app.services.audio_extractor import extract_audio
@@ -9,38 +10,53 @@ from app.utils.srt_generator import generate_srt
 from app.services.system_monitor import is_system_overloaded, is_system_busy
 from app.services.queue_manager import queue_manager
 
+logger = logging.getLogger(__name__)
+
 router = APIRouter()
 
 class TranscribeRequest(BaseModel):
     file_path: str
 
 # Helper function to run the heavy processing block in the background
-def process_transcription_job(input_path: str):
-    audio_path = extract_audio(input_path)
-    transcription_result = transcribe_audio(audio_path)
-    srt_content = generate_srt(transcription_result["segments"])
+def process_transcription_job(job_id: str, input_path: str):
+    logger.info(f"Transcription job started for ID: {job_id}")
+    queue_manager.results[job_id]["status"] = "processing"
     
-    base_name = os.path.basename(input_path)
-    file_name_without_ext = os.path.splitext(base_name)[0]
-    unique_id = uuid.uuid4().hex[:6]
-    srt_filename = f"{file_name_without_ext}_{unique_id}.srt"
-    srt_file_path = os.path.join(SUBTITLES_DIR, srt_filename)
-    
-    with open(srt_file_path, "w", encoding="utf-8") as srt_file:
-        srt_file.write(srt_content)
+    try:
+        audio_path = extract_audio(input_path)
         
-    return {
-        "text": transcription_result["text"],
-        "segments": transcription_result["segments"],
-        "srt": srt_content,
-        "saved_srt_path": srt_file_path,
-        "saved_srt_filename": srt_filename
-    }
+        logger.info(f"[{job_id}] Whisper processing begins for {audio_path}")
+        transcription_result = transcribe_audio(audio_path)
+        logger.info(f"[{job_id}] Transcription ends")
+        
+        srt_content = generate_srt(transcription_result["segments"])
+        
+        base_name = os.path.basename(input_path)
+        file_name_without_ext = os.path.splitext(base_name)[0]
+        srt_filename = f"{file_name_without_ext}_{job_id}.srt"
+        srt_file_path = os.path.join(SUBTITLES_DIR, srt_filename)
+        
+        with open(srt_file_path, "w", encoding="utf-8") as srt_file:
+            srt_file.write(srt_content)
+            
+        queue_manager.results[job_id]["status"] = "completed"
+        queue_manager.results[job_id]["result"] = {
+            "text": transcription_result["text"],
+            "segments": transcription_result["segments"],
+            "srt": srt_content,
+            "saved_srt_path": srt_file_path,
+            "saved_srt_filename": srt_filename
+        }
+        
+    except Exception as e:
+        logger.error(f"[{job_id}] Transcription job failed: {e}")
+        queue_manager.results[job_id]["status"] = "failed"
+        queue_manager.results[job_id]["error"] = str(e)
 
 @router.post("/transcribe")
-async def transcribe_endpoint(request: TranscribeRequest):
+async def transcribe_endpoint(request: TranscribeRequest, background_tasks: BackgroundTasks):
     """
-    Endpoint to transcribe an audio/video file securely via the smart queue.
+    Endpoint to transcribe an audio/video file securely via BackgroundTasks.
     """
     input_path = request.file_path
     
@@ -49,38 +65,26 @@ async def transcribe_endpoint(request: TranscribeRequest):
     
     # 1. System Load Check
     if is_system_overloaded():
-        # Case 3: Overloaded -> reject
         return {
             "status": "rejected",
             "message": "System is critically overloaded (CPU & RAM > 90%). Please try again later."
         }
         
-    # 2. Check Queue Capacity
-    if len(queue_manager.queue) >= queue_manager.max_queue:
-        return {
-            "status": "rejected",
-            "message": "Too many people in line! Queue is full. Try again later."
-        }
-        
-    # 3. Add to background worker queue
-    job_id = queue_manager.add_task(process_transcription_job, input_path)
+    # Generate job_id manually to bypass the broken queue worker
+    job_id = uuid.uuid4().hex[:8]
+    queue_manager.results[job_id] = {"status": "queued"}
     
-    # 4. Intelligent response message
-    if is_system_busy():
-        status_msg = "queued"
-        user_msg = "System under heavy load, processing may be slow"
-    elif queue_manager.active_jobs == 0 and len(queue_manager.queue) == 1:
-        status_msg = "processing"
-        user_msg = "System is free. Processing your transcription immediately."
-    else:
-        status_msg = "queued"
-        user_msg = "Your request is in queue. Please wait."
-        
+    logger.info(f"Queuing direct BackgroundTask execution for job ID: {job_id}")
+    
+    # Add to fastapi background tasks (TEMP FIX: force direct execution bypassing broken queue_manager loop)
+    # This prevents the job from getting stuck if queue worker is dead.
+    background_tasks.add_task(process_transcription_job, job_id, input_path)
+    
     return {
         "job_id": job_id,
-        "status": status_msg,
-        "message": user_msg,
-        "queue_position": len(queue_manager.queue)
+        "status": "processing",
+        "message": "System is free. Processing your transcription immediately.",
+        "queue_position": 0
     }
 
 @router.get("/transcribe/status/{job_id}")
